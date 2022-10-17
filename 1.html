@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Caro game</h3>
+<p id = 'text'></p>
+<button id="btn" onclick="change()">Change Value</button>
+<script>
+    let txt ='';
+    const board = [
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+    ]
+    for (let j in board) {
+        txt += '</br>'
+        for (let i in board[j]) {
+            txt += board[i][j] + '&nbsp;&nbsp;&nbsp;&nbsp;';
+        }
+    }
+    document.getElementById("text").innerHTML = txt;
+    function change(){
+        txt = '';
+        let x = prompt('Enter position of row x :');
+        let y = prompt('Enter position of column y :');
+        board[x][y] = 'x';
+        for (let j in board) {
+            txt += '</br>'
+            for (let i in board[j]) {
+                txt += board[i][j] + '&nbsp;&nbsp;&nbsp;&nbsp;';
+            }
+        }
+        document.getElementById("text").innerHTML = txt;
+    }
+</script>
+</body>
+</html>
